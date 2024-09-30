@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard do Funcionário</title>
+    <link rel="stylesheet" href="dashboardfuncionario.css">
+</head>
+<body>
+    <!-- Cabeçalho com botões de navegação -->
+    <header>
+        <div class="logo">
+            <h1>Dashboard Funcionário</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="./cadastro-cliente.html">Cadastro Clientes</a></li>
+                <li><a href="./cadastro-vendas.html">Cadastro de Vendas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main>
+        <div class="container">
+            <!-- Informações do Funcionário -->
+            <section class="employee-info">
+                <h2>Informações do Funcionário</h2>
+                <div class="info-group">
+                    <label>ID do Funcionário:</label>
+                    <p>12345</p>
+                </div>
+                <div class="info-group">
+                    <label>Cargo:</label>
+                    <p>Vendedor</p>
+                </div>
+                <div class="info-group">
+                    <label>Comissão (%):</label>
+                    <p>10%</p>
+                </div>
+                <div class="info-group">
+                    <label>Total de Vendas:</label>
+                    <p>R$ 15.000,00</p>
+                </div>
+            </section>
+
+            <!-- Estoque da Loja -->
+            <section class="inventory-info">
+                <h2>Estoque da Loja</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID Produto</th>
+                            <th>Nome do Produto</th>
+                            <th>Quantidade</th>
+                            <th>Preço Unitário</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>001</td>
+                            <td>Sapato Social</td>
+                            <td>50</td>
+                            <td>R$ 250,00</td>
+                        </tr>
+                        <tr>
+                            <td>002</td>
+                            <td>Tênis Esportivo</td>
+                            <td>100</td>
+                            <td>R$ 180,00</td>
+                        </tr>
+                        <tr>
+                            <td>003</td>
+                            <td>Sandália Feminina</td>
+                            <td>75</td>
+                            <td>R$ 120,00</td>
+                        </tr>
+                        <tr>
+                            <td>004</td>
+                            <td>Botina Masculina</td>
+                            <td>30</td>
+                            <td>R$ 300,00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Sapataria - Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

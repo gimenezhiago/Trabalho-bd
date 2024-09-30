@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --azul: #1e2772;
+  --laranja: rgb(183,64,234);
+  --cinza: #555555;
+  --branco: #f1f3f6;
+  --branco-letra: #ffffff;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 18px;
+  font-family: "Poppins", sans-serif;
+}
+button img{
+    width: 1vw;
+    height: 1.5vh;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+}
+
+main {
+  height: 100vh;
+  width: 25vw;
+  background: var(--branco-letra);
+  padding: 1rem;
+  box-shadow: 10px 10px rgba(0, 0, 0, 0.5);
+  display: grid;
+  justify-content: center;
+}
+
+main nav {
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  font-weight: bolder;
+}
+
+main nav .login {
+  text-decoration: none;
+  color: var(--laranja);
+}
+main nav .register {
+  text-decoration: none;
+  color: var(--azul);
+}
+
+main .imagens {
+  display: grid;
+  justify-content: center;
+}
+
+main p label {
+  display: block;
+  color: var(--cinza);
+}
+
+main p input {
+  border: none;
+  background: var(--branco);
+  border-radius: 7px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  width: 19vw;
+  height: 6vh;
+  padding: 0.625rem;
+  box-shadow: 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+main p input::placeholder {
+  color: var(--cinza);
+}
+
+main p input:focus {
+  outline: none;
+  color: var(--cinza);
+}
+
+main p button{
+  height: 6vh;
+  width: 3vw;
+  border: none;
+  border-radius: 7px;
+  background: var(--laranja);
+  cursor: pointer;
+  position: relative;
+  right: .5625rem;
+  top: .125rem;
+}
+
+main .esquecer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+main .esquecer a {
+  font-size: 14px;
+}
+
+main #logar {
+  width: 22vw;
+  height: 6vh;
+  border-radius: 7px;
+  border: none;
+  background: var(--laranja);
+  color: var(--branco-letra);
+  font-weight: bolder;
+  cursor: pointer;
+  box-shadow: 0 3px 3px rgba(250, 114, 3, 0.418);
+}
+
+section {
+  height: 100vh;
+  width: 75vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(73, 52, 82);
+}
+
+section img {
+    height: 50vh;
+    border-radius: 50px;}

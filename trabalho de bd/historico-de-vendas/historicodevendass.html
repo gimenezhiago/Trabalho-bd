@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histórico de Vendas</title>
+    <link rel="stylesheet" href="historicodevendas.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Histórico de Vendas</h1>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <!-- Tabela de Histórico de Vendas -->
+            <section class="historico-vendas">
+                <h2>Vendas Realizadas</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID Funcionário</th>
+                            <th>ID Cliente</th>
+                            <th>Produto</th>
+                            <th>Quantidade</th>
+                            <th>Data da Venda</th>
+                            <th>Método de Entrega</th>
+                        </tr>
+                    </thead>
+                    <tbody id="historico">
+                        <!-- Histórico de Vendas -->
+                    </tbody>
+                </table>
+            </section>
+        </div>
+        
+        <!-- Status Geral -->
+        <section class="status-geral">
+            <h2>Status Geral das Vendas</h2>
+            <div id="status">
+                <!-- Resumo do Status das Vendas -->
+                <p>Total de Vendas: <span id="total-vendas">0</span></p>
+                <p>Total de Produtos Vendidos: <span id="total-produtos">0</span></p>
+                <p>Data da Última Venda: <span id="ultima-venda">N/A</span></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Sapataria - Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        // Exemplo de dados de vendas para adicionar à tabela
+        const vendas = [
+            { idFuncionario: 1, idCliente: 101, produto: "Sapato 1", quantidade: 2, dataVenda: "2024-09-01", metodoEntrega: "Entrega Rápida" },
+            { idFuncionario: 2, idCliente: 102, produto: "Sapato 2", quantidade: 1, dataVenda: "2024-09-05", metodoEntrega: "Retirada" },
+            { idFuncionario: 1, idCliente: 103, produto: "Sapato 3", quantidade: 3, dataVenda: "2024-09-10", metodoEntrega: "Entrega Normal" },
+        ];
+
+        // Função para atualizar a tabela e o status geral
+        function atualizarHistorico() {
+            const tbody = document.getElementById('historico');
+            let totalProdutos = 0;
+
+            // Limpa a tabela
+            tbody.innerHTML = '';
+
+            // Adiciona cada venda à tabela
+            vendas.forEach(venda => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${venda.idFuncionario}</td>
+                    <td>${venda.idCliente}</td>
+                    <td>${venda.produto}</td>
+                    <td>${venda.quantidade}</td>
+                    <td>${venda.dataVenda}</td>
+                    <td>${venda.metodoEntrega}</td>
+                `;
+                tbody.appendChild(row);
+                totalProdutos += venda.quantidade;
+            });
+
+            // Atualiza o status geral
+            document.getElementById('total-vendas').innerText = vendas.length;
+            document.getElementById('total-produtos').innerText = totalProdutos;
+            document.getElementById('ultima-venda').innerText = vendas.length > 0 ? vendas[vendas.length - 1].dataVenda : 'N/A';
+        }
+
+        // Chama a função para inicializar a tabela
+        atualizarHistorico();
+    </script>
+</body>
+</html>

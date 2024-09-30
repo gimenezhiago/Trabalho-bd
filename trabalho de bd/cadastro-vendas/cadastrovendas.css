@@ -1,0 +1,149 @@
+/* Estilos Gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #1e2772;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 26px;
+    margin: 0;
+}
+
+/* Layout do Conteúdo Principal */
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.form-container,
+.search-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+    width: 48%;
+}
+
+/* Formulário de Cadastro */
+.form-container h2 {
+    font-size: 22px;
+    color: #1e2772;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 16px;
+    color: #1e2772;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: rgb(183, 64, 234);
+    outline: none;
+    box-shadow: 0 0 5px rgba(183, 64, 234, 0.5);
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    background-color: #1e2772;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: rgb(183, 64, 234);
+}
+
+/* Barra de Pesquisa */
+.search-container h2 {
+    font-size: 22px;
+    color: #1e2772;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.search-box {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+.search-box button {
+    padding: 10px 20px;
+    background-color: #1e2772;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-box button:hover {
+    background-color: rgb(183, 64, 234);
+}
+
+/* Resultados da Pesquisa */
+#search-results {
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+/* Rodapé */
+footer {
+    background-color: #1e2772;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+}

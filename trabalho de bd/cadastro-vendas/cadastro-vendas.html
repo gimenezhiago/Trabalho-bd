@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Pedido</title>
+    <link rel="stylesheet" href="cadastrovendas.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Cadastro de Pedido</h1>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <!-- Formulário de Cadastro de Pedido -->
+            <section class="form-container">
+                <h2>Preencha os dados do pedido</h2>
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <label for="id_produto">ID do Produto *</label>
+                        <input type="text" id="id_produto" name="id_produto" placeholder="Digite o ID do produto" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="id_funcionario">ID do Funcionário *</label>
+                        <input type="text" id="id_funcionario" name="id_funcionario" placeholder="Digite o ID do funcionário" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="id_cliente">ID do Cliente *</label>
+                        <input type="text" id="id_cliente" name="id_cliente" placeholder="Digite o ID do cliente" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="forma_pagamento">Forma de Pagamento *</label>
+                        <select id="forma_pagamento" name="forma_pagamento" required>
+                            <option value="">Selecione a forma de pagamento</option>
+                            <option value="cartao_credito">Cartão de Crédito</option>
+                            <option value="cartao_debito">Cartão de Débito</option>
+                            <option value="boleto">Boleto</option>
+                            <option value="pix">Pix</option>
+                            <option value="dinheiro">Dinheiro</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="metodo_entrega">Método de Entrega *</label>
+                        <select id="metodo_entrega" name="metodo_entrega" required>
+                            <option value="">Selecione o método de entrega</option>
+                            <option value="retirada_loja">Retirada na Loja</option>
+                            <option value="entrega_domicilio">Entrega a Domicílio</option>
+                        </select>
+                    </div>
+                    <button type="submit">Cadastrar Pedido</button>
+                </form>
+            </section>
+
+            <!-- Barra de Pesquisa -->
+            <section class="search-container">
+                <h2>Buscar Cliente</h2>
+                <div class="search-box">
+                    <input type="text" id="search" placeholder="Digite o nome do cliente">
+                    <button type="button" onclick="buscarCliente()">Buscar</button>
+                </div>
+                <div id="search-results">
+                    <!-- Os resultados da busca serão exibidos aqui -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Sapataria - Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        // Função simulada para buscar cliente
+        function buscarCliente() {
+            const nomeCliente = document.getElementById('search').value;
+            const resultados = document.getElementById('search-results');
+            
+            // Simulação de busca de cliente (pode ser substituída por uma chamada ao banco de dados no backend)
+            const clientes = [
+                { id: 1, nome: 'Antonio Lindo' },
+                { id: 2, nome: 'Hiago Viado' },
+                { id: 3, nome: 'Pedro Harry' },
+                { id: 4, nome: 'Gabriel Chucrute' },
+            ];
+
+            const clienteEncontrado = clientes.find(cliente => cliente.nome.toLowerCase() === nomeCliente.toLowerCase());
+            
+            if (clienteEncontrado) {
+                resultados.innerHTML = `<p>ID: ${clienteEncontrado.id} | Nome: ${clienteEncontrado.nome}</p>`;
+            } else {
+                resultados.innerHTML = `<p>Cliente não encontrado.</p>`;
+            }
+        }
+    </script>
+</body>
+</html>

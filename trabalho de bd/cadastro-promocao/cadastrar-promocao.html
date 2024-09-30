@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento de Promoções</title>
+    <link rel="stylesheet" href="cadastrarpromocao.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Gerenciamento de Promoções</h1>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <!-- Formulário de Cadastro de Promoções -->
+            <section class="cadastro-promocoes">
+                <h2>Criar/Modificar Promoção</h2>
+                <form id="promocao-form">
+                    <div class="form-group">
+                        <label for="nome-promocao">Nome da Promoção:</label>
+                        <input type="text" id="nome-promocao" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="percentual-desconto">Percentual de Desconto (%):</label>
+                        <input type="number" id="percentual-desconto" min="0" max="100" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="data-inicio">Data de Início:</label>
+                        <input type="date" id="data-inicio" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="data-fim">Data de Fim:</label>
+                        <input type="date" id="data-fim" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="condicoes">Condições:</label>
+                        <textarea id="condicoes" rows="4" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="produtos">Produtos (IDs separados por vírgula):</label>
+                        <input type="text" id="produtos" required>
+                    </div>
+                    <button type="submit">Cadastrar/Modificar Promoção</button>
+                </form>
+            </section>
+
+            <!-- Seção para Histórico de Promoções -->
+            <section class="historico-promocoes">
+                <h2>Histórico de Promoções</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Desconto (%)</th>
+                            <th>Data Início</th>
+                            <th>Data Fim</th>
+                            <th>Status</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="historico">
+                        <!-- Histórico de Promoções -->
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Sapataria - Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        // JavaScript para adicionar promoções
+        document.getElementById('promocao-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const nome = document.getElementById('nome-promocao').value;
+            const desconto = document.getElementById('percentual-desconto').value;
+            const dataInicio = document.getElementById('data-inicio').value;
+            const dataFim = document.getElementById('data-fim').value;
+            const condicoes = document.getElementById('condicoes').value;
+            const produtos = document.getElementById('produtos').value;
+
+            // Adiciona a promoção ao histórico
+            const historicoRow = document.createElement('tr');
+            historicoRow.innerHTML = `
+                <td>${nome}</td>
+                <td>${desconto}</td>
+                <td>${dataInicio}</td>
+                <td>${dataFim}</td>
+                <td>Ativa</td>
+                <td>
+                    <button class="modify-button">Modificar</button>
+                    <button class="remove-button">Desativar</button>
+                </td>
+            `;
+
+            // Função para modificar a promoção
+            historicoRow.querySelector('.modify-button').onclick = function() {
+                // Lógica para modificar a promoção (para ser implementada)
+                alert("Modificar: " + nome);
+            };
+
+            // Função para desativar a promoção
+            historicoRow.querySelector('.remove-button').onclick = function() {
+                historicoRow.querySelector('td:nth-child(5)').innerText = 'Inativa';
+            };
+
+            document.getElementById('historico').appendChild(historicoRow);
+
+            // Limpa o formulário
+            document.getElementById('promocao-form').reset();
+        });
+    </script>
+</body>
+</html>

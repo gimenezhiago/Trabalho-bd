@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Clientes</title>
+    <link rel="stylesheet" href="cadastrocliente.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Cadastro de Clientes</h1>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <!-- Formulário de Cadastro de Clientes -->
+            <section class="cadastro-clientes">
+                <h2>Cadastrar Novo Cliente</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="nome">Nome:</label>
+                        <input type="text" id="nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cpf">CPF:</label>
+                        <input type="text" id="cpf" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefone">Telefone:</label>
+                        <input type="text" id="telefone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="endereco">Endereço (opcional):</label>
+                        <input type="text" id="endereco">
+                    </div>
+                    <button type="submit">Cadastrar Cliente</button>
+                </form>
+            </section>
+
+            <!-- Seção para Atualizar ou Excluir Cliente -->
+            <section class="atualizar-cliente">
+                <h2>Atualizar ou Excluir Cliente</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="id-cliente">ID do Cliente:</label>
+                        <input type="text" id="id-cliente" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="status">Status:</label>
+                        <select id="status">
+                            <option value="ativo">Ativo</option>
+                            <option value="inativo">Inativo</option>
+                        </select>
+                    </div>
+                    <button type="submit">Atualizar Status</button>
+                    <button type="button" class="btn-delete">Excluir Cliente</button>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Sapataria - Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
